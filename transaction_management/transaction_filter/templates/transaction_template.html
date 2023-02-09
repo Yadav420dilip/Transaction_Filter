@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction</title>
+</head>
+<body>
+{% block content %}
+  <form method="get">
+
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for transaction in filter.qs %}
+    <li>{{ transaction.title }} - {{ transaction.amt }} - {{ transaction.date }} - {{ transaction.status }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
+</body>
+</html>
