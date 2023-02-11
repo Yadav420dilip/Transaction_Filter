@@ -4,8 +4,8 @@ import django_filters
 
 class TransactionFilter(django_filters.FilterSet):
     # date = django_filters.DateFilter(field_name='date', lookup_expr='date')
-    date = django_filters.DateFilter(field_name='date', lookup_expr='date__gt')
-    date1 = django_filters.DateFilter(field_name='date', lookup_expr='date__lt')
+    start_date = django_filters.DateFilter(field_name='date', lookup_expr='date__gt', label='Start Date')
+    end_date = django_filters.DateFilter(field_name='date', lookup_expr='date__lt', label='End Date')
 
     amt = django_filters.OrderingFilter(
         fields=(
